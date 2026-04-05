@@ -5,14 +5,14 @@ const equipmentsList = [
   { name: "🧿 Basilisk Collar", power: 0, toughness: 0 },
   { name: "👑 Blackblade Reforged", power: 0, toughness: 0, special: "blackblade" },
   { name: "🪓 Bloodforged Battle-Axe", power: 2, toughness: 0 },
-  { name: "⚔️ Buster Sword", power: 3, toughness: 0 },
-  { name: "🪄 Caduceus, Staff of Hermes", power: 1, toughness: 1 },
+  { name: "⚔️ Buster Sword", power: 3, toughness: 2 },
+  { name: "🪄 Caduceus, Staff of Hermes", power: 5, toughness: 5 },
   { name: "🛡️ Champion's Helm", power: 2, toughness: 2 },
   { name: "🔨 Colossus Hammer", power: 10, toughness: 10 },
   { name: "🏴 Conqueror's Flail", power: 3, toughness: 3 },
-  { name: "🔪 Cori-Steel Cutter", power: 1, toughness: 0 },
-  { name: "🛡️ Darksteel Plate", power: 0, toughness: 2 },
-  { name: "🥊 Genji Glove", power: 2, toughness: 0 },
+  { name: "🔪 Cori-Steel Cutter", power: 1, toughness: 1 },
+  { name: "🛡️ Darksteel Plate", power: 0, toughness: 0 },
+  { name: "🥊 Genji Glove", power: 0, toughness: 0 },
   { name: "👑 Helm of the Host", power: 0, toughness: 0 },
   { name: "⚔️ Hero's Blade", power: 3, toughness: 2 },
   { name: "🪓 Leyline Axe", power: 2, toughness: 1 },
@@ -22,8 +22,8 @@ const equipmentsList = [
   { name: "🥾 Swiftfoot Boots", power: 0, toughness: 0 },
   { name: "🗺️ Sword of the Animist", power: 1, toughness: 1 },
   { name: "🥾 Trailblazer's Boots", power: 0, toughness: 0 },
-  { name: "✨ Ultima Weapon", power: 5, toughness: 5 },
-  { name: "💀 Worldslayer", power: 3, toughness: 3 }
+  { name: "✨ Ultima Weapon", power: 7, toughness: 7 },
+  { name: "💀 Worldslayer", power: 0, toughness: 0 }
 ];
 
 export default function Home() {
