@@ -61,24 +61,39 @@ export default function Home() {
   };
 
   const equipItem = (item) => {
-    if (selectedTarget === "main") {
-      setEquipped(prev => ({
+  if (selectedTarget === "main") {
+    setEquipped(prev => {
+      const alreadyEquipped = prev.main.some(
+        eq => eq.name === item.name
+      );
+
+      return {
         ...prev,
-        main: [...prev.main, item]
-      }));
-    } else {
-      setEquipped(prev => ({
+        main: alreadyEquipped
+          ? prev.main.filter(eq => eq.name !== item.name)
+          : [...prev.main, item]
+      };
+    });
+  } else {
+    setEquipped(prev => {
+      const current = prev.copies[selectedTarget] || [];
+
+      const alreadyEquipped = current.some(
+        eq => eq.name === item.name
+      );
+
+      return {
         ...prev,
         copies: {
           ...prev.copies,
-          [selectedTarget]: [
-            ...(prev.copies[selectedTarget] || []),
-            item
-          ]
+          [selectedTarget]: alreadyEquipped
+            ? current.filter(eq => eq.name !== item.name)
+            : [...current, item]
         }
-      }));
-    }
-  };
+      };
+    });
+  }
+};
 
   return (
     <div style={{ background: "#0a0a0a", color: "white", padding: 20 }}>
