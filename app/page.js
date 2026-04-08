@@ -161,11 +161,31 @@ export default function Home() {
       {/* EQUIP */}
       <h2 style={{ marginTop: 30 }}>Equipaggiamenti</h2>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-        {equipmentsList.map((item, i) => (
-          <button key={i} onClick={() => equipItem(item)}>
-            {item.name}
-          </button>
-        ))}
+       {equipmentsList.map((item, i) => {
+  const currentEquipped =
+    selectedTarget === "main"
+      ? equipped.main
+      : equipped.copies[selectedTarget] || [];
+
+  const isActive = currentEquipped.some(
+    eq => eq.name === item.name
+  );
+
+  return (
+    <button
+      key={i}
+      onClick={() => equipItem(item)}
+      style={{
+        background: isActive ? "green" : "#333",
+        color: "white",
+        padding: "8px",
+        borderRadius: "8px"
+      }}
+    >
+      {item.name}
+    </button>
+  );
+})}
       </div>
     </div>
   );
